@@ -21,42 +21,42 @@ func Extract(data []byte) ([]Impfquote, error) {
 	var quotes []Impfquote
 
 	for i := 1; i < 17; i++ {
-		state, err := readCellString(dataSheet, i, 0)
+		state, err := readCellString(dataSheet, i, 1)
 		if err != nil {
 			return nil, err
 		}
 
-		total, err := readCellInt64(dataSheet, i, 1)
+		total, err := readCellInt64(dataSheet, i, 2)
 		if err != nil {
 			return nil, err
 		}
 
-		diffYesterday, err := readCellInt64(dataSheet, i, 2)
+		diffYesterday, err := readCellInt64(dataSheet, i, 3)
 		if err != nil {
 			return nil, err
 		}
 
-		per1k, err := readCellFloat64(dataSheet, i, 3)
+		per1k, err := readCellFloat64(dataSheet, i, 4)
 		if err != nil {
 			return nil, err
 		}
 
-		becauseAge, err := readCellInt64(dataSheet, i, 4)
+		becauseAge, err := readCellInt64(dataSheet, i, 5)
 		if err != nil {
 			return nil, err
 		}
 
-		becauseJob, err := readCellInt64(dataSheet, i, 5)
+		becauseJob, err := readCellInt64(dataSheet, i, 6)
 		if err != nil {
 			return nil, err
 		}
 
-		medReason, err := readCellInt64(dataSheet, i, 6)
+		medReason, err := readCellInt64(dataSheet, i, 7)
 		if err != nil {
 			return nil, err
 		}
 
-		inCare, err := readCellInt64(dataSheet, i, 7)
+		inCare, err := readCellInt64(dataSheet, i, 8)
 		if err != nil {
 			return nil, err
 		}
